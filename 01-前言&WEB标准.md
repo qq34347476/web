@@ -3,7 +3,7 @@ typora-copy-images-to: media
 ---
 
 > 第01阶段.前端基础.认识WEB
-# 基础班学习目标
+# 基础学习目标.
 
 目标：  能根据psd文件，用HTML+CSS 布局出符合W3C规范的网页。
 
