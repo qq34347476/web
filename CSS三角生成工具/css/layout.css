@@ -1,0 +1,300 @@
+html{
+	display:block !important;
+}
+#headerInner{
+	width:780px;
+	margin:0 auto;
+	position:relative;
+}
+#locales{
+	position:absolute;
+	right:80px;
+	top:0px;
+}
+#locales li{
+	list-style:none;
+	line-height:12px;
+}
+#locales li a{
+	font-size:12px;
+}
+:disabled{
+	background:#ddd;
+	color:#666
+}
+#title{
+	font-size:24px;
+	padding:10px 0;
+	text-align:center;
+}
+#article{
+	width:760px;
+	margin:0 auto;
+}
+#sidebar{
+	width:380px;
+	padding:0 10px;
+	height:100%;
+	background:#eee;
+	float:left;
+	overflow:auto;
+}
+#workArea{
+	margin-left:400px;
+	height:100%;
+	width:380px;
+}
+#triangleOutput{
+	display:block;
+	min-height:300px;
+	min-width:380px;
+	background:url('transparent.png') 0 0 repeat;
+}
+#cssOutput{
+	display:block;
+	width:380px;
+	height:150px;
+	background:#fff;
+	position:relative;
+	padding-left:10px;
+}
+#cssOutput h1{
+	font-size:24px;
+	height:24px;
+	text-indent:4px;
+}
+#css{
+	width:370px;
+	margin-top:10px;
+	height:100px;
+	border:0;
+}
+#tips{
+	margin-bottom:20px;
+}
+#tips ul{
+	margin-left:30px;
+}
+#tips li, #tips code{
+	font-size:12px;
+	list-style:disc;
+}
+#tips code{
+	color:#592052;
+}
+#tips h1{
+	font-size:24px;
+	text-indent:14px;
+}
+
+#triangle{
+	/* 
+		Bug in Chrome 18+ and Safari 5.1.2+
+		- http://labs.eky.hk/bug/webkit-border-width-transition/
+		- https://bugs.webkit.org/show_bug.cgi?id=77560
+		
+		-webkit-transition:.3s;
+	*/
+	-moz-transition:.3s;
+	-ms-transition:.3s;
+	-o-transition:.3s;
+	transition:.3s;
+	border-style: solid;
+	width: 0px;
+	height: 0px;
+	line-height: 0px;
+	border-width: 0px 100px 100px 100px;
+	border-color: transparent transparent #007bff transparent;
+	_border-color: #000 #000 #007bff #000;
+	_filter:progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+#data{
+
+}
+#data legend{
+	font-size:24px;
+}
+#data fieldset{
+	padding:10px 0 10px;
+	padding-right:0;
+}
+#data li{
+	list-style:none;
+}
+
+#fieldset-direction{
+	position:relative;
+}
+#direction1{
+	float:left;
+	width:120px;
+}
+#direction2{
+	float:left;
+}
+
+#fieldset-type li{
+	float:left;
+	margin-right:20px;
+}
+
+#fieldset-size label,
+#fieldset-size input{
+	display:block;
+	float:left;
+}
+#fieldset-size label{
+	width:70px;
+}
+#fieldset-size ul{
+	margin-left:20px;
+}
+#fieldset-size > ul{
+	margin-left:0;
+}
+#fieldset-size li{
+	clear:both;
+}
+
+.js #color{
+	position:absolute;
+	top:-100000px;
+	left:-100000px;
+}
+
+#update{
+	padding:10px;
+	font-size:24px;
+	margin:10px auto;
+	display:block;
+	width:100px;
+	cursor:pointer;
+}
+
+:root #direction1,
+:root #direction2{
+	width:300px;
+}
+
+:root #direction1,
+:root #direction1 li,
+:root #direction2,
+:root #direction2 li{
+	position:absolute;
+	font-size:14px;
+}
+#direction1 li:nth-child(1){
+	top:0;
+	left:110px;
+}
+#direction1 li:nth-child(2){
+	top:50px;
+	left:180px;
+}
+#direction1 li:nth-child(3){
+	top:100px;
+	left:110px;
+}
+#direction1 li:nth-child(4){
+	top:50px;
+	left:40px;
+}
+#direction2 li:nth-child(1){
+	top:20px;
+	left:170px;
+}
+#direction2 li:nth-child(2){
+	top:80px;
+	left:170px;
+}
+#direction2 li:nth-child(3){
+	top:80px;
+	right:205px;
+}
+#direction2 li:nth-child(4){
+	top:20px;
+	right:205px;
+}
+
+#triangleDirection{
+	display:none;
+	position:relative;
+}
+:root #triangleDirection{
+	display:block;
+	clear:both;
+	position:relative;
+	width:70px;
+	height:45px;
+	margin:30px 0 50px 100px;
+}
+.corners{
+	position:absolute;
+	top:0;
+	left:0;
+	width:60px;
+	height:60px;
+}
+.corners.rotate-45{
+	width:54px;
+	height:54px;
+	margin:4px 0 0 4px;
+	-webkit-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+}
+.corners > label{
+	position:absolute;
+	width:30px;
+	height:30px;
+	background:#0094FF;
+	cursor:pointer;
+}
+.corners.rotate-45 > label{
+	width:27px;
+	height:27px;
+	background:#77F1FF;
+}
+.corners > label:hover{
+	background:#FF77F1;
+}
+.corners .topRight,
+.corners .top{
+	top:0;
+	right:0;
+}
+.corners .bottomRight,
+.corners .right{
+	bottom:0;
+	right:0;
+}
+.corners .bottomLeft,
+.corners .bottom{
+	bottom:0;
+	left:0;
+}
+.corners .topLeft,
+.corners .left{
+	top:0;
+	left:0;
+}
+#centerFill{
+	position:absolute;
+	top:12px;
+	left:12px;
+	width:38px;
+	height:38px;
+	background:#fff;
+}
+.selected-top .triangle.top,
+.selected-bottom .triangle.bottom,
+.selected-left .triangle.left,
+.selected-right .triangle.right,
+.selected-topRight .triangle.topRight,
+.selected-bottomRight .triangle.bottomRight,
+.selected-bottomLeft .triangle.bottomLeft,
+.selected-topLeft .triangle.topLeft{
+	background:#FF77F1;
+}

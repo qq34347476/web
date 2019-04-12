@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* 智能社 - www.zhinengshe.com */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+	font-family:"Microsoft YaHei"
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+}
+html.full, html.full body {
+	font-family:Corbel, 'MS PGothic', 'Microsoft JhengHei', Arial, Verdana, Helvetica, sans-serif;
+}
+input, select, textarea{
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+}
+a{
+	color:#197882;
+	text-decoration:none;
+}
+.clearfix:after { content: "."; display:block; height:0px; clear:both; visibility:hidden; }
+.clearfix { zoom:1 \9; display:block; }
+
+hr{
+	border:1px #666 solid;
+	width:100%;
+	margin:20px 0;
+}
+#top{
+	width:100%;
+	height:90%;
+	position:relative;
+	overflow:auto;
+}
+#header{
+	height:65px;
+	width:100%;
+	background:#eee;
+	position:relative;
+	padding:10px 0 20px;
+}
+#header .title{
+	font-size:36px;
+	text-align:center;
+}
+#header #subTitle{
+	font-size:18px;
+	text-align:center;
+}
+#social{
+	font-size:24px;
+	position:absolute;
+	right:20px;
+	top:0px;
+	width:50px;
+	height:200px;
+	color:#666;
+}
+#social .fb-like{
+	position:absolute;
+	top:0;
+}
+#social .fb-like > span{
+	position:absolute !important;
+	top:45px;
+	height:30px !important;
+}
+#social .twitter-share-button{
+	position:absolute !important;
+	top:0px;
+	padding-top:0px;
+}
+#___plusone_0{
+	position:absolute !important;
+	top:27px;
+	padding-left:5px;
+	padding-top:5px;
+}
+
+#footer{
+	height:90px;
+	width:100%;
+	background:#eee;
+	overflow:hidden;
+	position:relative;
+	clear:both;
+}
+html.full #footer{
+	bottom:0;
+	left:0;
+	position:absolute;
+}
+#footer .title{
+	display:block;
+	font-size:24px;
+	position:absolute;
+	right:20px;
+	top:30%;
+	color:#666;
+}
+#footer .title a{
+	color:#666;
+}
+#HTML5Logo{
+	font-size:24px;
+	position:absolute;
+	left:20px;
+	top:15%;
+	color:#666;
+}
+.infoList{
+	padding-top:20px;
+	width:720px;
+	margin:0 auto;
+}
+.infoList li{
+	display:inline-block;
+	vertical-align:top;
+	margin-right:20px;
+}
+.infoSublist{
+	margin-left:10px;
+}
+.infoSublist li{
+	font-size:12px;
+	display:inline-block;
+}
+.infoSublist.browserList{
+	width:350px;
+}
+.infoSublist.verticalList li{
+	display:block;
+}
