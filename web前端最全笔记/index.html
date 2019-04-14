@@ -375,7 +375,7 @@
 					<br>underline：下划线
 					<br>overline：上划线
 					<br>line-through：删除线</span></li>
-				<li><a href="#">text-shadow</a>(1px 1px 2px #248)<span>文本阴影:1px 1px 5px #000; （水平,垂直,模糊半径,颜色）<br>在线生成3DCSS文字<a href="http://www.3dcsstext.com/">GO TO!</a></span></li>
+				<li><a href="#">text-shadow</a>(1px 1px 2px #248)<span>文本阴影:1px 1px 5px #000; （水平,垂直,模糊半径,颜色）<br>在线生成3DCSS文字<a href="http://tool.uixsj.cn/3d-css/">GO TO!</a></span></li>
 				<li><a href="#">::selection</a><span>对象被选择时的样式,必须使用双冒号【CSS】<br>::selection只能定义被选择时的background-color及color</span></li>
 				<li><a href="#">-webkit-text-fill-color</a>
 					<span>
@@ -595,7 +595,8 @@
                     <span>[简写]background:#222 url() Xpx Ypx/size repeat attachment clip origin,...
                     <br>逗号隔开每组background的缩写值；如果有size值，需要紧跟position并且用"/"隔开；
                     <br>分解写法时，background-color只能设置一个。
-                    <br>缩写时,如果前面设置了独立属性,在缩写中未被定义的会被覆盖会空或默认值,如果在后面补充了的,后面的属性会自动合并到缩写中,如果该属性不被支持,则造成整个缩写属性无法识别！因根据情况全部分开写。
+					<br>缩写时,如果前面设置了独立属性,在缩写中未被定义的会被覆盖会空或默认值,如果在后面补充了的,后面的属性会自动合并到缩写中,如果该属性不被支持,则造成整个缩写属性无法识别！因根据情况全部分开写。
+					<a href="http://www.internetke.com/jsEffects/2014120803/">CSS3渐变背景代码生成工具</a>
                     </span></li>
                     <li><a href="#">background-color</a><span>背景颜色,可用rgba来设置半透明背景,而不是用opacity,制作一些遮罩效果</span>
                     </li><li><a href="#">background-position</a><span>背景图的位置,可以为负值和百分比,也可以用left(x=0),right(x=100%),top(y=100%),bottom(y=100%).先写水平,后写垂直.背景图的50%居中以图形中心为基点，不需要再移动自身一半尺寸
@@ -1979,19 +1980,24 @@
                     <a href="#">-webkit-overflow-scrolling:touch</a>
                     <span>区域快速回滚 <a href="http://blog.csdn.net/hursing/article/details/9186199">参考资料</a></span>
                 </li>
-                <li><a href="#">-webkit-tap-highlight-color</a><span>*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</span></li>
+				<li><a href="#">-webkit-tap-highlight-color</a><span>*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);} <br>
+					这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。
+					想要禁用这个高亮，设置颜色的alpha值为0即可。<br>
+					<a href="https://www.cnblogs.com/libin-1/p/5903350.html">参考资料</a>
+				</span></li>
                 <li>
                     <a href="#">-webkit-appearance</a>
                     <span>
                     <a href="http://www.w3cplus.com/blog/271.html">webkit移动表单控件重置</a><br>
                     <pre><code data-language="css" class="rainbow">
+						<span><br>消除输入框和按钮的原生外观，<br>在iOS上加上这个属性才能给按钮和输入框自定义样式 。<br>注意：不同type的input使用这个属性之后表现不一。<br>text、button无样式，radio、checkbox直接消失</span>
                      <span class="entity name tag">input</span>[<span class="entity name tag">type</span>=<span class="string">"submit"</span>],<span class="entity name tag">input</span>[<span class="entity name tag">type</span>=<span class="string">"reset"</span>],<span class="entity name tag">input</span>[<span class="entity name tag">type</span>=<span class="string">"button"</span>],<span class="entity name tag">button</span> {
                       <span class="support css-property"><span class="support vendor-prefix">-webkit-</span>appearance</span>:<span class="support css-value">none</span>;
                      }
                     </code></pre>
                     </span>
                 </li>
-                <li><a href="#">-webkit-touch-callout:none</a><span>body,防止长按复制图片,ipad+iphone</span></li>
+                <li><a href="#">-webkit-touch-callout:none</a><span>body,防止长按复制图片,ipad+iphone禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加</span></li>
             </ul>
         </div>
     </div>
@@ -6549,6 +6555,7 @@
 			<li><a href="https://icomoon.io/app/#select">icomoon</a></li>
 			<li><a href="http://iconfont.cn/repositories/10">iconfont</a></li>
 			<li><a href="http://v3.bootcss.com/components">Glyphicons</a></li>
+			<li><a href="https://www.iconfont.cn/">阿里巴巴矢量库</a></li>
 			<li><a href="http://www.fontsquirrel.com/tools/webfont-generator">Fontsquirrel</a></li>
 			<li><a href="http://zh.fonts2u.com/index.html">Font2U</a></li>
 			<li><a href="http://ttf2eot.sebastiankippe.com/">TTF-&gt;EOT</a></li>
@@ -6639,6 +6646,8 @@
 		<li><a href="http://www.bejson.com/go.html?u=http://www.bejson.com/xml2json">JSON-JS互转</a></li>
 		<li><a href="http://cdn.code.baidu.com/">百度静态资源公共库</a></li>
 		<li><a href="https://qq34347476.github.io/web/CSS三角生成工具/CSS三角生成工具.html">CSS三角生成工具</a></li>
+		<li><a href="http://www.internetke.com/jsEffects/2014120803/">CSS3渐变背景代码生成工具</a></li>
+		<li><a href="http://tool.uixsj.cn/3d-css/">在线生成3DCSS文字</a></li>
 		
 		</ul>
 	</div>
