@@ -104,7 +104,7 @@
 ###3.缩放
         transform:scale(2)  数值 
             两个值  第一个值代表水平放大或缩小  第一个值代表垂直放大或缩小   
-####4.倾斜（扭曲）
+#### 4.倾斜（扭曲）
         1.transform: skew(ndeg);  2.transform: skewX(ndeg)  3.transform: skewY(ndeg)
     可以写多个：
         transform: translate() rotate() scale() skew();
