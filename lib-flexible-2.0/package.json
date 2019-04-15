@@ -1,0 +1,33 @@
+{
+  "name": "amfe-flexible",
+  "version": "2.2.1",
+  "description": "Build flexible page on mobile platform",
+  "keywords": [
+    "lib",
+    "amfe",
+    "flexible",
+    "mobile",
+    "css",
+    "rem",
+    "vw"
+  ],
+  "homepage": "https://github.com/amfe/lib-flexible",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amfe/lib-flexible.git"
+  },
+  "author": [
+    {
+      "name": "mingelz",
+      "email": "mingelz@gmail.com"
+    }
+  ],
+  "scripts": {
+    "compress": "uglifyjs index.js -o index.min.js -c -m"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^3.0.27"
+  },
+  "license": "MIT"
+}
