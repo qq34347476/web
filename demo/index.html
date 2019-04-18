@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>哆啦A梦</title>
+
+	<style type="text/css">
+		#main {
+			width: 640px;
+			height: 550px;
+			/* background: lightblue; */
+			margin: 0 auto;
+			position: relative;
+			margin-top: 30px;
+		}
+
+		header {
+			width: 330px;
+			height: 330px;
+			background: #04a0ea;
+			border-radius: 50%;
+			margin-left: 150px;
+			border: 2px solid #666;
+		}
+
+		.face {
+			width: 290px;
+			height: 290px;
+			background: #fff;
+			border-radius: 50%;
+			position: relative;
+			top: 37px;
+			border: 2px solid #666;
+			left: 18px;
+		}
+
+		.eye_1 {
+			width: 70px;
+			height: 85px;
+			border: 2px solid #666;
+			border-top-left-radius: 70px;
+			background: #fff;
+			z-index: 2;
+			position: relative;
+			left: 90px;
+			top: -290px;
+			border-radius: 50%;
+		}
+
+		.eye_11 {
+			width: 25px;
+			height: 30px;
+			border: 2px solid #666;
+			background: #000;
+			border-radius: 50%;
+			z-index: 3;
+			position: relative;
+			left: 120px;
+			top: -345px;
+			-webkit-animation-name: yan1;
+			animation-name: yan1;
+			-webkit-animation-duration: 4s;
+			animation-duration: 4s;
+			-webkit-animation-timing-function: ease-in-out;
+			animation-timing-function: ease-in-out;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+		}
+
+		@-webkit-keyframes yan1 {
+			0% {
+				-webkit-transform: translateX(-20px);
+				transform: translateX(-20px);
+			}
+
+			50% {
+				-webkit-transform: translateX(5px);
+				transform: translateX(5px);
+			}
+
+			100% {
+				-webkit-transform: translateX(-20px);
+				transform: translateX(-20px);
+			}
+		}
+
+		@keyframes yan1 {
+			0% {
+				-webkit-transform: translateX(-20px);
+				transform: translateX(-20px);
+			}
+
+			50% {
+				-webkit-transform: translateX(5px);
+				transform: translateX(5px);
+			}
+
+			100% {
+				-webkit-transform: translateX(-20px);
+				transform: translateX(-20px);
+			}
+		}
+
+		.eye_2 {
+			width: 70px;
+			height: 85px;
+			border: 2px solid #666;
+			border-top-left-radius: 70px;
+			background: #fff;
+			z-index: 2;
+			position: relative;
+			left: 162px;
+			top: -414px;
+			border-radius: 50%;
+		}
+
+		.eye_22 {
+			width: 25px;
+			height: 30px;
+			border: 2px solid #666;
+			background: #000;
+			border-radius: 50%;
+			z-index: 3;
+			position: relative;
+			left: 178px;
+			top: -469px;
+			-webkit-animation-name: yan2;
+			animation-name: yan2;
+			-webkit-animation-timing-function: ease-in-out;
+			animation-timing-function: ease-in-out;
+			-webkit-animation-duration: 4s;
+			animation-duration: 4s;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+		}
+
+		@-webkit-keyframes yan2 {
+			0% {
+				-webkit-transform: translateX(20px);
+				transform: translateX(20px)
+			}
+
+			50% {
+				-webkit-transform: translateX(-5px);
+				transform: translateX(-5px)
+			}
+
+			100% {
+				-webkit-transform: translateX(20px);
+				transform: translateX(20px)
+			}
+		}
+
+		@keyframes yan2 {
+			0% {
+				-webkit-transform: translateX(20px);
+				transform: translateX(20px)
+			}
+
+			50% {
+				-webkit-transform: translateX(-5px);
+				transform: translateX(-5px)
+			}
+
+			100% {
+				-webkit-transform: translateX(20px);
+				transform: translateX(20px)
+			}
+		}
+
+		.nose {
+			width: 50px;
+			height: 50px;
+			background: #d10e30;
+			border-radius: 50%;
+			border: 2px solid #666;
+			position: relative;
+			left: 136px;
+			top: -472px;
+			z-index: 3;
+		}
+
+		.white {
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			border-radius: 50%;
+			border: 2px solid #666;
+			position: relative;
+			left: 151px;
+			top: -514px;
+			z-index: 3;
+		}
+
+		.mouth1 {
+			height: 150px;
+			width: 2px;
+			background: #666;
+			position: absolute;
+			top: 121px;
+			left: 312px;
+		}
+
+		.mouth2 {
+			width: 250px;
+			height: 200px;
+			border-bottom: 2px solid #666;
+			position: absolute;
+			top: 70px;
+			border-radius: 50%;
+			left: 190px;
+			z-index: 4;
+		}
+
+		.mustache_1 {
+			width: 80px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(30deg);
+			-ms-transform: rotate(30deg);
+			transform: rotate(30deg);
+			position: absolute;
+			top: 135px;
+			left: 200px;
+		}
+
+		.mustache_2 {
+			width: 90px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(5deg);
+			-ms-transform: rotate(5deg);
+			transform: rotate(5deg);
+			position: absolute;
+			top: 180px;
+			left: 180px;
+		}
+
+		.mustache_3 {
+			width: 90px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(-20deg);
+			-ms-transform: rotate(-20deg);
+			transform: rotate(-20deg);
+			position: absolute;
+			top: 225px;
+			left: 184px;
+		}
+
+		.mustache_4 {
+			width: 80px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(150deg);
+			-ms-transform: rotate(150deg);
+			transform: rotate(150deg);
+			position: absolute;
+			top: 135px;
+			left: 342px;
+		}
+
+		.mustache_5 {
+			width: 90px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(170deg);
+			-ms-transform: rotate(170deg);
+			transform: rotate(170deg);
+			position: absolute;
+			top: 175px;
+			left: 355px;
+		}
+
+		.mustache_6 {
+			width: 90px;
+			border: 1px solid #666;
+			-webkit-transform: rotate(30deg);
+			-ms-transform: rotate(30deg);
+			transform: rotate(30deg);
+			position: absolute;
+			top: 230px;
+			left: 345px;
+		}
+
+		.bozi {
+			width: 220px;
+			height: 15px;
+			border-radius: 5px;
+			border: 2px solid #666;
+			background: #db042e;
+			position: absolute;
+			top: 290px;
+			left: 206px;
+			z-index: 4;
+		}
+
+		.main {
+			width: 222px;
+			height: 170px;
+			background: #00a1e9;
+			position: absolute;
+			top: 308px;
+			left: 207px;
+			z-index: 2;
+		}
+
+		.arm {
+			width: 85px;
+			height: 55px;
+			background: #00a1e9;
+			position: absolute;
+			top: 300px;
+			left: 132px;
+			border: 2px solid #666;
+		}
+
+		.arm {
+			border-bottom-left-radius: 60%;
+			-webkit-animation-name: arm;
+			animation-name: arm;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+			-webkit-transform-origin: right;
+			-ms-transform-origin: right;
+			transform-origin: right;
+		}
+
+		@-webkit-keyframes arm {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(20deg);
+				transform: rotate(20deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+		}
+
+		@keyframes arm {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(20deg);
+				transform: rotate(20deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+		}
+
+		.arm_2 {
+			width: 85px;
+			height: 55px;
+			background: #00a1e9;
+			position: absolute;
+			top: 320px;
+			left: 363px;
+			border: 2px solid #666;
+			border-bottom-left-radius: 60%;
+			-webkit-transform: rotate(-80deg);
+			-ms-transform: rotate(-80deg);
+			transform: rotate(-80deg);
+			z-index: 3;
+			border-radius: 10% 10% 50% 100%;
+		}
+
+		.hand {
+			width: 60px;
+			height: 60px;
+			background: #fff;
+			position: absolute;
+			top: 289px;
+			left: 90px;
+			border: 2px solid #666;
+			border-radius: 50%;
+			z-index: 2;
+			-webkit-animation-name: arm2;
+			animation-name: arm2;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+			-webkit-transform-origin: right;
+			-ms-transform-origin: right;
+			transform-origin: right;
+		}
+
+		@-webkit-keyframes arm2 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(00deg);
+				transform: rotate(00deg);
+			}
+		}
+
+		@keyframes arm2 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(00deg);
+				transform: rotate(00deg);
+			}
+		}
+
+		.hand_2 {
+			width: 60px;
+			height: 60px;
+			background: #fff;
+			position: absolute;
+			top: 361px;
+			left: 344px;
+			border: 2px solid #666;
+			border-radius: 50%;
+			z-index: 4;
+		}
+
+		.bell_1 {
+			width: 50px;
+			height: 50px;
+			background: #f5e548;
+			position: absolute;
+			top: 300px;
+			left: 286px;
+			border: 2px solid #666;
+			border-radius: 50%;
+			z-index: 3;
+		}
+
+		.bell_2 {
+			width: 50px;
+			height: 10px;
+			background: #f5e548;
+			position: absolute;
+			top: 315px;
+			left: 286px;
+			border: 2px solid #666;
+			border-radius: 40%;
+			z-index: 3;
+		}
+
+		.bell_3 {
+			width: 12px;
+			height: 12px;
+			background: #836855;
+			position: absolute;
+			top: 330px;
+			left: 304px;
+			border: 2px solid #333;
+			border-radius: 50%;
+			z-index: 3;
+		}
+
+		.bell_4 {
+			height: 10px;
+			position: absolute;
+			top: 340px;
+			left: 311px;
+			border: 1px solid #666;
+			z-index: 3;
+		}
+
+		.heaith_1 {
+			width: 180px;
+			height: 135px;
+			background: #fff;
+			border-radius: 50%;
+			border: 2px solid #666;
+			z-index: 2;
+			position: absolute;
+			top: 305px;
+			left: 224px;
+		}
+
+		.heaith_2 {
+			width: 140px;
+			height: 50px;
+			background: #fff;
+			border-radius: 0 0 50% 100%;
+			border: 2px solid #666;
+			z-index: 2;
+			position: absolute;
+			top: 378px;
+			left: 254px;
+		}
+
+		.heaith_3 {
+			width: 120px;
+			height: 70px;
+			background: #00a0e8;
+			border-radius: 50%;
+			border: 2px solid #666;
+			z-index: 2;
+			position: absolute;
+			top: 425px;
+			left: 195px;
+		}
+
+		.heaith_4 {
+			width: 120px;
+			height: 70px;
+			background: #00a0e8;
+			border-radius: 50%;
+			border: 2px solid #666;
+			z-index: 2;
+			position: absolute;
+			top: 425px;
+			left: 318px;
+		}
+
+		.footer,
+		.footer2 {
+			width: 40px;
+			height: 80px;
+			background: #fff;
+			border-radius: 50%;
+			border: 2px solid #666;
+			z-index: 4;
+			position: absolute;
+			top: 420px;
+			left: 273px;
+		}
+
+		.footer2 {
+			top: 420px;
+			left: 314px;
+		}
+
+		/* ==============心============== */
+		.heart {
+			position: relative;
+			width: 0px;
+			height: 0px;
+		}
+
+		.heart::after,
+		.heart::before {
+			position: absolute;
+			content: "";
+			z-index: 9;
+			left: calc(25px / 1.5 + 344px);
+			top: -1px;
+			width: calc(25px / 1.5);
+			height: calc(40px / 1.5);
+			background: pink;
+			border-radius: 25px 25px 0 0;
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-transform-origin: bottom left;
+			-ms-transform-origin: bottom left;
+			transform-origin: bottom left;
+			/* animation：动画名称 持续时间 运动曲线(匀速linear) 何时开始 播放次数(无限infinite ) 是否反方向(逆播放alternate) 动画起始或者结束的状态(保持forwards/回到起始backwards); */
+			-webkit-animation: heart_left 1s linear infinite;
+			animation: heart_left 1s linear infinite;
+		}
+
+		.heart:after {
+			left: 344px;
+			top: -1px;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+			-webkit-transform-origin: bottom right;
+			-ms-transform-origin: bottom right;
+			transform-origin: bottom right;
+			-webkit-animation: heart_right 1s linear infinite;
+			animation: heart_right 1s linear infinite;
+		}
+
+		.in {
+			left: 25px;
+		}
+
+		@-webkit-keyframes heart_left {
+
+			0%,
+			100% {
+				background-color: rgb(253, 60, 92);
+				-webkit-transform: rotate(-45deg) scale(0.8);
+				transform: rotate(-45deg) scale(0.8);
+				/* box-shadow: 0 0 10px 10px rgba(0, 0, 255, .3); */
+			}
+
+			50% {
+				background-color: rgb(247, 118, 238);
+				-webkit-transform: rotate(-45deg) scale(1);
+				transform: rotate(-45deg) scale(1);
+				/* box-shadow: 0 0 10px 10px rgba(231, 97, 220, 0.1); */
+			}
+		}
+
+		@keyframes heart_left {
+
+			0%,
+			100% {
+				background-color: rgb(253, 60, 92);
+				-webkit-transform: rotate(-45deg) scale(0.8);
+				transform: rotate(-45deg) scale(0.8);
+				/* box-shadow: 0 0 10px 10px rgba(0, 0, 255, .3); */
+			}
+
+			50% {
+				background-color: rgb(247, 118, 238);
+				-webkit-transform: rotate(-45deg) scale(1);
+				transform: rotate(-45deg) scale(1);
+				/* box-shadow: 0 0 10px 10px rgba(231, 97, 220, 0.1); */
+			}
+		}
+
+		@-webkit-keyframes heart_right {
+
+			0%,
+			100% {
+				background-color: rgb(253, 60, 92);
+				-webkit-transform: rotate(45deg) scale(0.8);
+				transform: rotate(45deg) scale(0.8);
+				/* box-shadow: 0 0 10px 10px rgba(0, 0, 255, .3); */
+
+			}
+
+			50% {
+				background-color: rgb(247, 118, 238);
+				-webkit-transform: rotate(45deg) scale(1);
+				transform: rotate(45deg) scale(1);
+				/* box-shadow: 0 0 10px 10px rgba(231, 97, 220, 0.1); */
+			}
+		}
+
+		@keyframes heart_right {
+
+			0%,
+			100% {
+				background-color: rgb(253, 60, 92);
+				-webkit-transform: rotate(45deg) scale(0.8);
+				transform: rotate(45deg) scale(0.8);
+				/* box-shadow: 0 0 10px 10px rgba(0, 0, 255, .3); */
+
+			}
+
+			50% {
+				background-color: rgb(247, 118, 238);
+				-webkit-transform: rotate(45deg) scale(1);
+				transform: rotate(45deg) scale(1);
+				/* box-shadow: 0 0 10px 10px rgba(231, 97, 220, 0.1); */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<a href="https://qq34347476.github.io/web/web前端最全笔记/index.html">
+		<div id="main">
+			<header>
+				<nav class="face"></nav>
+				<nav class="eye_1"></nav>
+				<nav class="eye_11"></nav>
+				<nav class="eye_2"></nav>
+				<nav class="eye_22"></nav>
+				<nav class="nose"></nav>
+				<nav class="white"></nav>
+				<nav class="mouth1"></nav>
+				<nav class="mouth2"></nav>
+				<div class="mustache_1"></div>
+				<div class="mustache_2"></div>
+				<div class="mustache_3"></div>
+				<div class="mustache_4"></div>
+				<div class="mustache_5"></div>
+				<div class="mustache_6"></div>
+			</header>
+			<article>
+				<div class="heart"></div>
+				<div class="bozi"></div>
+				<div class="main"></div>
+				<div class="arm"></div>
+				<div class="arm_2"></div>
+				<div class="hand"></div>
+				<div class="hand_2"></div>
+				<div class="bell_1"></div>
+				<div class="bell_2"></div>
+				<div class="bell_3"></div>
+				<div class="bell_4"></div>
+				<div class="heaith_1"></div>
+				<div class="heaith_2"></div>
+				<div class="heaith_3"></div>
+				<div class="heaith_4"></div>
+				<div class="footer"></div>
+				<div class="footer2"></div>
+			</article>
+		</div>
+	</a>
+
+</body>
+
+</html>
