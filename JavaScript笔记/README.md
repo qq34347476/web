@@ -216,3 +216,81 @@ num=20;
     3.当遇见return  直接退出函数体  下面不在执行
     4.一个函数只有一个return；
     5.不加return  默认返回undefined;
+#js第五天：
+##arguments: 伪数组：具有数据的一些属性 但是也不具有数组的一方法 
+    arguments:实参的对象 只要创建函数默认就有arguments 	
+    一般 形参多少  实参多少   arguments用的不多！！！
+##函数以参数的形式传递----回调函数
+##作用域：
+    全局作用域：在函数外部都是全部作用域
+    局部作用域： 在函数内部都是局部作用域
+    全局变量： 在任何地方都可以访问
+    局部变量： 只能在当前作用域下访问
+    总结 局部可以访问全局    全局不可以访问局部  
+###作用域链的基本原理：
+    当调用函数---会把函数推送到执行栈（局部作用域）----全局作用域与函数的链式称为作用域链。 0级作用域链----1级作用域链
+##预解析：
+    当浏览器加载的时候 会有提前预解析的过程；
+        提升：  var num = 10;    var num;	
+        提升:   function fn(){}   function fn(){}
+##对象：  万物皆对象！！！！
+    1.键值对的集合。
+    2.功能集与数据集的集合
+        数据集的描述： 属性:属性值
+        功能集的描述： 函数名：函数
+    普通函数与对象的函数：
+        对象的函数前面加对象
+###对象的获取：
+    对象.属性名
+    对象["属性名"]
+    obj.方法()
+###对象的几种创建方式：
+    1.创建空对象： 在动态添加值
+         var obj = {};
+        obj.name = "kf";
+        obj.age = 18;
+        obj.sex = "nan";
+    2.创建有内容的对象
+        var obj = {
+            name:"kf",
+            age:"18",
+            sex:"nan"
+        }
+    3.创建空对象：
+        var obj = new Object();
+        obj.name = "kf";
+        obj.age = 18
+    4.创建有内容的对象：
+        var obj = new Object({
+            name:"kf",
+            age:18
+        })
+###对象的封装：
+    工厂模式：
+        function person(name, age, sex) {
+            //var obj = {};
+            var obj = new Object()
+            obj.name = name;
+            obj.age = age;
+            obj.sex = sex;
+            return obj;
+        }
+    构造函数：
+        function Person(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex 
+        }
+        var per = new Person("tongtong",30,"男")
+        var per = person("jujie",50,"男");
+###new的执行过程：
+    1.创建空对象（创建内存地址）
+    2.改变this指向当前对象
+    3.执行构造函数的代码
+    4.返回this；
+###面向过程：
+    举行晚会：
+        1.找演员--->2.找吃的--->3.灯光摄影--->4.抽奖活动
+###面向对象：
+    举行晚会：
+        1.找演员--->2.找吃的--->3.灯光摄影--->4.抽奖活动
