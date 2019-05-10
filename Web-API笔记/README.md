@@ -135,7 +135,7 @@ DOM:页面上所有的动态效果
             btn.removeEventListener("click", fn)
         }
 
-## 事件流三个阶段 
+## 事件流三个阶段
 
 捕获 目标 冒泡
 
@@ -149,11 +149,11 @@ DOM:页面上所有的动态效果
     事件流与位置没有关系 只要是嵌套都会依次发生事件
     事件对象（事件源参数 e）
 
-target: 
+target:
 
     点击了谁(最里层的元素)；
 
-this: 
+this:
 
     绑定的事件
 
@@ -181,11 +181,11 @@ keydown:
 
     按下键盘 没有松开时候一直触发事件
 
-keyup： 
+keyup：
 
     弹起键盘时候触发；
 
-# bom加载事件：
+# bom 加载事件：
 
     1.load window.onload = function(){} 等到页面元素，外部的 js，图片和引用其他的资源绘制完毕再加载事件。
     2.DOMContentLoaded： 等到页面元素绘制完毕加会加载事件。
@@ -209,11 +209,11 @@ keyup：
 
 ## this 指向：
 
-this 当调用时候确定 this 指向  ,  当定义时候不能确定 this 指向！！ 
+this 当调用时候确定 this 指向 , 当定义时候不能确定 this 指向！！
 
-    1.普通函数调用-------指向的是 window（永远）; 
-    2.方法调用-----当前调用的对象 事件----当前调用的对象 
-    3.构造函数调用：高级回来！！！！! call apply bind(); 
+    1.普通函数调用-------指向的是 window（永远）;
+    2.方法调用-----当前调用的对象 事件----当前调用的对象
+    3.构造函数调用：高级回来！！！！! call apply bind();
     4.  setInterval(function () {
             console.log(this) //window
         },毫秒数)
@@ -225,9 +225,9 @@ this 当调用时候确定 this 指向  ,  当定义时候不能确定 this 指�
     同步：做一件事 造成性能问题；
     异步：做多个事 当执行主线程的内容 定时器放在任务队列里面
 
-## javascript 运行机制： 
+## javascript 运行机制：
 
-    1.先执行主线程里的代码  
+    1.先执行主线程里的代码
     2.当发现 定时器 会把定时器 放到任务对列里面去执行
     3.继续向下执行等主线程的所有代码执行完毕之后再去执行任务队列里的代码
     4.循环去任务队列里面去执行代码 （事件循环）
@@ -245,22 +245,61 @@ setInterval setTimeout 0 误差--（0.4-10s）
 
     href：设置或者获取地址栏信息路径
     search： 获取地址栏参数 ?name=kf&age=18
-    pathname:返回路径  
+    pathname:返回路径
     host:主机名
     port：端口号；
+
+### offset 与 style
+
+    offset: 获取的是内部样式 不带单位 获取元素位置
+    style:获取行内样式 带单位 不包含 padding 及 border 设置元素位置
+
+## 立即执行函数:
+
+    (function(){
+        var num =19;
+    }){}
+
+目的:创建一个封闭的区域,避免变量的污染
+
+### 垃圾回收机制:
+
+    全局作用域下的变量 不会销毁
+    局部作用域下的变量 当关闭浏览器立刻销毁
+
 
 ### 坐标系列：
 
 3 组大小位置相关的属性：
 
-    1.offset:
-    1.offsetWidth: 获取当前元素的宽度 （包含 width + padding + border）
-    2.offsetHeight：获取当前元素的高度 （包含 width + padding + border）
-    3.offsetLeft: 获取当前元素距离带有定位父元素的坐标
-    4.offsetTop: 获取当前元素距离带有定位父元素的坐标
-    5.offsetParent：获取带有定位的最近父元素
+1.offset：
 
-offset 与 style
+    1.offsetwidth：获取当前元素的宽度（包含 width+padding+border)
+    2.offsetHeight:获取当前元素的高度（包含 width+padding+border)
+    3.offsetLeft:获取当前元素距离带有定位父元素的坐标
+    4.offsetTop:获取当前元素距离带有定位父元素的坐标
+    5.offsetParent:获取带有定位的最近父元素
 
-    offset: 获取的是内部样式 不带单位 获取元素位置
-    style:获取行内样式 带单位 不包含 padding 及 border 设置元素位置
+    offset与style
+        offset:获取的是内部样式不带单位获取元素位置
+        style：获取行内样式带单位不包含padding及border设置元素位置
+
+2.client:
+
+    clientLeft:获取的是边框的宽度
+    clienttop：获取的是边框的宽度
+    clientwidth:获取的是内容的宽度 width+padding不包含边框
+    clientHeight:获取的是内容的高度 width+padding 不包含边框
+
+3.scrol1
+
+    scrollwidth:内容的大小（包含padding和未显示的内容）不包含滚动条
+    scro11Height:内容的大小（包含padding和未显示的内容）不包含滚动条
+    scrollLeft:内容滚动出去的大小
+    scrol1Top:内容滚动出去的大小
+
+1.onscrol1窗口事件
+2.页面滚动出去的距离>banner距离页面的距离侧边栏改成固定定位位置：侧边栏距离页面的距离-banner距离页面的距离
+3.如果超出
+4.如果不超出侧边栏改成绝对定位位置：300px
+5.如果页面滚动出去的距离>main距离页面的距离显示文字否则隐藏
