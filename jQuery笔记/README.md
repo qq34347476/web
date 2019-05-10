@@ -47,7 +47,15 @@
     后代选择器： $("div li")
     交集选择器： $("div.current")
     子代选择器： $("div>li")
-    含有指定类名的标签选择器: $('div.goback')
+
+    扩展几个选择器:
+        $('div.goback') 选取div中的类名为goback的元素
+        $("[href]")  选取带有 href 属性的元素
+        $(":button") 可以选取所有 type="button" 的 <input> 元素 和 <button> 元素，如果去掉冒号，$("button")只能获取 <button> 元素
+
+    关于 : 和 [] 这两个符号的理解
+        ：可以理解为种类的意思，如：p:first，p 的种类为第一个。
+        [] 很自然的可以理解为属性的意思，如：[href] 选取带有 href 属性的元素。
 
 # 4.隐式迭代：
 
