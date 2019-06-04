@@ -1,144 +1,186 @@
-# -web
-移动web基础
-============================================
-##**Git 工具总结**
+# git 安装配置
 
-### 常用命令
+## 0. 安装 Git
 
-本地 "新建文件夹"	及文件上传到git
+网上有很多 Git 安装教程，如果需要图形界面，windows 下建议使用 TortoiseGit，linux 建议使用 Git GUI 或者 GITK。
 
-git add.
+## 1. Git 基本配置
 
-git commit - m "新建文件夹"
+git config 可以配置 git 的参数，可以使用 git config --list 查看已经配置的 git 参数。其中有三个级别的保存位置，
 
-git push
+    --system、--global、--local，分别表示所有用户（本系统）、当前用户（全局）、本地配置（当前目录），默认使用--local。
 
-###初操作---设置用户名
+### 配置用户名及邮箱
 
-git config --global user.name "any name"  //设置全局project的用户名
-git config --global user.email "any email"  //设置全局project的邮箱
-git config --global --list   //查看当前用户的全局配置   用户名和邮箱
-在VS Code中每次更新代码都会要输入账号密码，方便起见，可以配置一下让 git 记住密码账号。
-git config --global credential.helper store 
+在使用 Git 提交前，必须配置用户名和邮箱，这些信息会永久保存到历史记录中。
 
-###建立远程仓库链接
+    git config --global user.name "Tocy"
+    git config --global user.email zyvj@qq.com
 
-如果是从服务器 clone 下来的代码，会自动配置一个叫 origin 的远程仓库链接
-git remote -v  // 查看配置的远程仓库链接
-git remote add <远程仓库名> <远程仓库url>    //添加远程库链接
-git remote rm <远程仓库名>   //移除远程仓库
-git remote rename <oldname> <new name> //远程仓库重命名
+其他配置
 
-###提交代码过程
+    如果在windows下建议还是配置下默认文本编辑器core.editor和差异分析工具merge.tool。
 
-提交之前，需要 pull 一下，然后处理冲突
-git add -A   //添加所有文件，也可以只提交更改的文件 git add .
-git add .   //添加更改的文件
-git commit -m "描述代码信息"
-git push -u <远程库的名称> <远程库的分支>  // -u 表示指定<当前远程库> 为默认远程仓库，以后就直接push，不用带参数
-如果你确定远程仓库的分支上那些代码都不需要了，那么直接 push 后面加一个 -f ，强行让本地分支覆盖远程分支
-git push <远程仓库名> <远程库的分支> -f 
+## 2. 创建 Git 仓库
 
-###提交代码出现冲突
+    可以直接调用git init初始化当前目录，即创建Git仓库。
 
-git push 会出问题，应该先pull 一下，但是 pull 的时候又可能会出现分支冲突，
-这时可能由于版本问题会报错，可能遇到 refusing to merge unrelated histories 这个提示是因为两个仓库不同，发现 refusing to merge unrelated histories，无法 pull。
-要把两个不同的项目合并，git 需要添加一句代码 ，这句代码是在 git 2.9.2 版本发生的，最新的版本需要添加 –allow-unrelated-histories。查看git 版本，git --version
-假如我们的远程仓库是 origin，分支是 master，那么我们 需要这样写  git pull origin master --allow-unrelated-histories
-然后再  git push -u <远程库的名称> <远程库的分支>
+## 3. 获得 Git 仓库
 
-###拉取代码出现冲突
+如果需要克隆远程仓库，可以使用 git clone，比如：
 
-git pull 时本地文件和远程服务器文件冲突，出错信息如下：
-error: Your local changes to 'contextTempl.java' would be overwritten by merge.  Aborting.
-Please, commit your changes or stash them before you can merge.
-解释：这个意思是说更新下来的内容和本地修改的内容有冲突，先提交你的改变或者先将本地修改暂时存储起来。
-在 VS Code 中，错误提示是：在签出前 请清理存储库工作树
-在这种情况下，您可以将更改隐藏起来，然后执行git pull，然后解压缩；
-git stash  //先将本地修改存储起来
-git pull  //拉取远程
-git stash pop //还原暂存内容
+    git clone https://github.com/qq34347476/web.git
 
-###代码克隆所有分支
+## 4. 提交更新
 
-　　git clone 只能 clone 远程库的 master 分支，无法 clone 所有分支，解决方法去下：
+在 windows 下的 Git GUI 中，提交很简单，右键-TortoiseGit-Commit。那么命令行下需要怎么处理？
 
-git clone http://xxx.xxx.com/project/.git ,这样在git_work目录下得到一个project子目录
-cd project
-git branch -a，列出所有分支名称如下：remotes/origin/dev     remotes/origin/release
-git checkout -b origin/dev dev，作用是 checkout 远程的 dev 分支，在本地起名为 dev 分支，并切换到本地的 dev 分支
-git checkout -b origin/release release，作用参见上一步解释
-git checkout dev，切换回 dev 分支，并开始开发。
+    Git中每个文件都有三种状态：committed、staged、modified。它们之间关系如下：
+        commit <-- stage <-- modify
+        commit --> --- --modify
 
+我们获取的 Git 仓库中的所有文件都是 committed 状态，
 
-　　查看分支：git branch
+如果你在本地修改了文件 a，a 的状态就变成 modified 的；
 
-　　创建分支：git branch <name>
+如果使用 git add a，a 的状态变成 staged；
 
-　　切换分支：git checkout <name>
+如果使用 git commit，a 的状态就变成 commited。
 
-　　创建+切换分支：git checkout -b <name>
+这种状态变化也说明复制代码是很方便的，但是提交更新请慎重。
 
-　　合并某分支到当前分支：git merge <name>
+当然还有一种文件状态，未跟踪状态（unversioned/untracked），通过使用 git add 可以把未跟踪状态变更为 staged；通过 git rm 可以将 staged 或者 committed 状态变为未跟踪状态。
 
-　　删除分支：git branch -d <name>
+### git status
 
- 
+通常提交前先检查下修改了什么内容，当前 Git 目录下各文件的状态。
 
-###指令简写
+    $ git status
+    On branch master
 
-　　-d    --delete：删除
+    Initial commit
 
-　　-D   --delete --force的快捷键
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
 
-　　-f     --force：强制
+    nothing added to commit but untracked files present (use "git add" to track)
 
-　　-m   --move：移动或重命名
+### git add
 
-　　-M   --move --force的快捷键
+git add 可以添加文件或者目录，也可以使用通配符。比如：
 
-　　-r     --remote：远程
+    git add Readme.md    # add file only
+    git add *.cpp        # add all cpp files
+    git add /home/code/  # add all files in /home/code
+    git diff
+    git diff可以查看当前目录的所有修改。
 
-　　-a     --all：所有
+提交之前，还是单独确认下处于 staged 状态的文件有哪些，并保证修改正确。在实际应用中，可能还需要使用 git diff 导出 PATCH 做代码走读。
 
- 
+可以使用 git diff --staged 或 git diff --cached 查看 staged 与上次提交快照之间的区别。
 
-###git fetch 和 git pull 的区别
+### git commit
 
-git fetch <远程主机名> <分支名>
-最常见的命令如取回 origin 主机的 master 分支：
-git fetch origin master  ，从远程主机的master分支拉取最新内容
-git merge FETCH_HEAD ， 将拉取下来的最新内容合并到当前所在的分支中
-git pull <远程主机名> <远程分支名>:<本地分支名>
-git pull origin master  ， 如果远程分支是与当前分支合并，则冒号后面的部分可以省略
+提交前需慎重。直接调用 git commit 会弹出编辑器，输入提交日志（如果是多行日志，建议使用）。
 
-###git 撤销操作、恢复文件
+    针对单行日志提交的情况，可以使用如下命令：
+        git commit -m "add readme"。
+    还有一种快捷的提交方式，直接跳过stage缓存区，直接提交当前目录下的所有修改
+        git commit -a（使用这个命令前建议确认下当前目录的修改是否正确、必须）。
 
-如果误删了某文件，需要 git status 先看下工作区是否 commit 过，如果没有 commit ，可以看到删除的文件名及路径，是红色的
-直接从工作区拿删除的文件 git checkout -- <path + file>
-如果已经commit 了，那么git status 看到的删除的文件及路径是绿色的，这时checkout 已经没用了
-可以把暂存区的修改撤销掉（unstage），git reset HEAD <path + file>，重新放回工作区，然后 git checkout -- <path + file> 取回
+### git rm
 
-###git 版本回退
+git rm 会把文件从当前目录删除（不会保存删除的文件）。
+如果需要从 Git 仓库中删除，但保留在当前工作目录中，亦即从跟踪清单中删除，可以使用
 
-远程分支回退有三种方法：
+    git rm --cached readme.md。
 
-自己的分支回滚直接用 reset
-公共分支回滚用 revert
-错的太远了直接将代码全部删掉，用正确代码替代
-本地分支版本回退：
+## 5. 提交历史查看
 
-先找到要回退的版本的 commit id ，git reflog 
-可以根据commit id ，查看先前版本的信息，git log <commit id>  或者 git show <commit id>，退出git log 状态，英文状态下按q 
-回退版本 git reset --hard <commit id> 
-自己的远程分支版本退回：
+可以使用 git log 查看当前工程的所有提交的日志。
 
-　　如果你的错误提交已经推送到自己的远程分支了，那么就需要回滚远程分支了。
+    git log --stat      # 仅显示摘要选项
+    git log --pretty=oneline        # 定制记录格式
+    git log --graph     # 图像化分支和版本更新
 
-git reflog
-git reset --hard <commit id>
-然后强制推送到远程分支，git push -f
-本地分支回滚后，版本将落后远程分支，必须使用强制推送覆盖远程分支，否则无法推送到远程分支
-公共远程分支回退：
+## 6. 撤销更新
 
-　　回滚公共远程分支和回滚自己的远程分支是有区别的，如果你回退公共远程分支，把别人的提交给丢掉了怎么办？
+## 7. 远程仓库
+
+可以使用 git remote 查看当前的远程库。
+
+### git remote -v 可以显示对应的克隆地址。（对于多个远程仓库很有用）
+
+### 添加远程仓库
+
+    git remote add [short_name] [url]可以添加新的远程仓库。
+
+### 从远程仓库抓取数据
+
+    git fetch [remote-name]可以从远程仓库抓取数据到本地。
+    也可以使用git pull
+
+### 推送数据到远程仓库
+
+    git push [remote_name] [branch_name]
+    默认使用origin和master。
+
+### 查看远程仓库信息
+
+    git remote show origin
+
+### 远程仓库的删除和重命名
+
+    git remote rename [old_name] [new_name]
+    git remote rm [remote_name]
+
+## 8. 打 Tags
+
+可使用 git tag 显示当前库中的标签。
+
+添加标签（含附注）
+
+    git tag -a v0.1 -m "my version 0.1"
+        使用如下命令查看Tag日志信息（指定对应标签的名字）
+            git show v0.1
+        也可使用SHA-1的提交表示创建tag：
+            git tag -a v0.2 [SHA-1] -m "my version 0.2"
+
+分享标签
+
+    默认的，git push不会推送标签信息到远程仓库，需要通过命令显式推送。
+        git push origin v0.1
+    如果需要推送所有标签，使用
+        git push origin --tags
+
+## 9. Git 分支
+
+git 分支是轻量级的，速度很快，仅记录索引信息。
+
+### 显示所有分支
+
+    使用git branch可显示当前所有分支。
+    可以使用--merged和--no-merged查看已经合并、未合并的分支。
+
+### 创建及切换分支
+
+可以使用下面命令直接切换并创建分支
+
+    git checkout -b testing
+
+等价于
+
+    $ git branch testing    # 创建testing 分支
+    $ git checkout testing  # 切换到testing分支
+
+注意切换分支时请保持工作目录没有未提交的修改。Git 鼓励使用分支，处理完问题之后合并分支即可。
+
+### 分支合并
+
+将 hotfix 分支合并到 master（主分支）上，需要通过下面命令：
+
+    $ git checkout master
+    $ git merge hotfix
+
+合并之后可以使用 git branch -d hotfix 删除分支。
+如果合并时存在冲突，需要手工修改。
