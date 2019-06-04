@@ -170,8 +170,8 @@ git 分支是轻量级的，速度很快，仅记录索引信息。
 
 等价于
 
-    $ git branch testing    # 创建testing 分支
-    $ git checkout testing  # 切换到testing分支
+    $git branch testing    # 创建testing 分支
+    $git checkout testing  # 切换到testing分支
 
 注意切换分支时请保持工作目录没有未提交的修改。Git 鼓励使用分支，处理完问题之后合并分支即可。
 
@@ -179,8 +179,8 @@ git 分支是轻量级的，速度很快，仅记录索引信息。
 
 将 hotfix 分支合并到 master（主分支）上，需要通过下面命令：
 
-    $ git checkout master
-    $ git merge hotfix
+    $git checkout master
+    $git merge hotfix
 
 合并之后可以使用 git branch -d hotfix 删除分支。
 如果合并时存在冲突，需要手工修改。
