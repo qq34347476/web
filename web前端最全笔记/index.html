@@ -47,6 +47,7 @@
 				<li><a href="javascript:void(0)">Javascript</a></li>
 				<li><a href="javascript:void(0)">HTML</a></li>
 				<li><a href="javascript:void(0)">RegEXP</a></li>
+				<li><a href="javascript:void(0)">git指令</a></li>
 				<li><a href="#toolbox">ToolBox</a></li>
 				<li><a href="https://github.com/qq34347476/web">Bithub</a></li>
 			</ul>
@@ -7201,6 +7202,344 @@
 					</ul>
 				</div>
 			</div>
+        </div>
+        
+        <div id="gitCommand" class="content" style="display:none">
+            <div class="gitCommand"> 
+                <div class="north">
+                    <div class="git-northLeft">
+                        <label>Git 常用命令速查表</label>
+                    </div>
+                    <div class="northRigth">
+                        <div class="nr">
+                            <div class="nrName">master</div><div class="nrTip">：默认开发分支</div>
+                            <div class="nrName">origin</div><div class="nrTip">：默认远程版本库</div>
+                        </div>
+                        <div class="nr">
+                            <div class="nrName">Head</div><div class="nrTip">：默认开发分支</div>
+                            <div class="nrName">Head^</div><div class="nrTip">：Head的父提交</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div><img src="./git指令_files/line.png" class="line"></div>
+                
+                <div class="git-center">
+                    <div class="center-vertical">
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>创建版本库</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git clone &lt;url&gt;</div>
+                                    <div class="tip">#克隆远程版本库</div>
+                                </div>					
+                                <div>
+                                    <div class="order">$ git init</div>
+                                    <div class="tip">#初始化本地版本库</div>
+                                </div>
+                            </div>
+                                            
+                        </div>
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>修改和提交</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git status</div>
+                                    <div class="tip">#查看状态</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git diff</div>
+                                    <div class="tip">#查看变更内容</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git add .</div>
+                                    <div class="tip">#跟踪所有改动过的文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git add &lt;file&gt;</div>
+                                    <div class="tip">#跟踪指定的文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git mv &lt;old&gt; &lt;new&gt;</div>
+                                    <div class="tip">#文件改名</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git rm &lt;file&gt;</div>
+                                    <div class="tip">#删除文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git rm --cached &lt;file&gt;</div>
+                                    <div class="tip">#停止跟踪文件但不删除</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git commit -m "message"</div>
+                                    <div class="tip">#提交所有更新过的文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git commit --amend</div>
+                                    <div class="tip">#修改最后一次提交</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>查看提交历史</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git log</div>
+                                    <div class="tip">#查看提交历史</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log &lt;branch&gt;</div>
+                                    <div class="tip">#查看指定分支提交历史</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log -p &lt;file&gt;</div>
+                                    <div class="tip">#查看指定文件的提交历史</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git blame &lt;file&gt;</div>
+                                    <div class="tip">#以列表方式查看指定文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log -&lt;number&gt;</div>
+                                    <div class="tip">#查看最近N条提交历史</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$  git log --name-status</div>
+                                    <div class="tip-line2">#查看提交历史和提交的文件</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log --pretty=oneline</div>
+                                    <div class="tip">#hash、备注一行显示</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log --oneline</div>
+                                    <div class="tip">#hash、备注一行显示</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git log --pretty=short</div>
+                                    <div class="tip">#hash、tag、作者、备注</div>
+                                </div>		
+                            </div>
+                        </div>
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>撤销</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order-line2">$ git reset --hard HEAD</div>
+                                    <div class="tip-line2">#撤销工作目录中所有未提交文件的修改内容</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git checkout HEAD &lt;file&gt;</div>
+                                    <div class="tip-line2">#撤销指定的未提交文件的修改内容</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git revert -&lt;commit&gt;</div>
+                                    <div class="tip">#撤销指定的提交</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git clean -f</div>
+                                    <div class="tip">#删除untracked files</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git clean -fd</div>
+                                    <div class="tip-line2">#连untracked的目录也一起删掉</div>
+                                </div>
+                                <div>
+                                    <div class="order-line3">$ git clean -xfd</div>
+                                    <div class="tip-line3">#连gitignore的untracked文件/目录也一起删掉(慎用)</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git clean -nf</div>
+                                    <div class="tip-line2">#查看将会删除哪些文件，另外两条命令同理</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                    <div class="center-vertical">
+                    
+                        
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>分支</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git branch </div>
+                                    <div class="tip">#显示所有本地分支</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git branch -a</div>
+                                    <div class="tip-line2">#显示所有本地和远程分支</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git branch -v</div>
+                                    <div class="tip">#查看分支最后一次提交</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git branch &lt;new-branch&gt;</div>
+                                    <div class="tip">#创建新分支</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git checkout &lt;branch/tag&gt;</div>
+                                    <div class="tip">#切换到指定分支或标签</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git branch -b &lt;branch&gt;</div>
+                                    <div class="tip">#新建+切换到指定分支</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git push &lt;remoteName&gt; &lt;branchName&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#推送本地分支到远程仓库</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2" style="width:100%">$ git checkout -b &lt;branchName&gt; &lt;remoteName&gt;/&lt;remoteBranchName&gt; </div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#拉取远程指定分支到本地</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git branch -d &lt;branch&gt;</div>
+                                    <div class="tip">#删除本地分支</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git push origin --delete &lt;branch&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#删除远程分支</div>
+                                </div>					
+                            </div>
+                        </div>
+                        
+            
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>标签</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git tag </div>
+                                    <div class="tip">#列出所有本地标签</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git tag &lt;tag&gt;</div>
+                                    <div class="tip">#基于最新提交创建标签</div>
+                                </div>	
+                                <div>
+                                    <div class="order">$ git tag &lt;tag&gt; &lt;commit&gt;</div>
+                                    <div class="tip">#在某个commit上打标签</div>
+                                </div>	
+                                <div>
+                                    <div class="order-line2">$ git push origin &lt;tag&gt;</div>
+                                    <div class="tip-line2">#本地tag推送到origin线上</div>
+                                </div>	
+                                <div>
+                                    <div class="order">$ git tag -d &lt;tag&gt;</div>
+                                    <div class="tip">#删除标签</div>
+                                </div>	
+                                <div>
+                                    <div class="order" style="width:100%">$ git push origin :refs/tags/&lt;tag&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#删除本地标签后删除线上标签</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <div class="center-vertical">
+                    
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>合并与衍合</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order-line2">$ git merge &lt;branch&gt;</div>
+                                    <div class="tip-line2">#合并指定分支到当前分支</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git rebase &lt;branch/tag&gt;</div>
+                                    <div class="tip-line2">#衍合指定分支到当前分支</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git branch --merged</div>
+                                    <div class="tip-line2">#查看哪些分支已经合并到当前分支</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git branch --no-merged</div>
+                                    <div class="tip-line2">#查看哪些分支没合并到当前分支</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="categary">
+                            <div class="git-title">
+                                <div>远程操作</div>
+                            </div>
+                            <div class="orders">
+                                <div>
+                                    <div class="order">$ git remote -v</div>
+                                    <div class="tip">#查看远程版本库信息</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git remote -show &lt;remote&gt;</div>
+                                    <div class="tip-line2">#查看远程指定版本库信息</div>
+                                </div>
+                                <div>
+                                    <div class="order-line2">$ git ls-remote</div>
+                                    <div class="tip-line2">#查看远程分支和标签信息</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git remote add &lt;remote&gt; &lt;url&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#添加远程版本库</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git checkout -b &lt;branchAlias&gt; origin/&lt;branch&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#拉取远程指定分支到本地</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git fetch &lt;remote&gt;</div>
+                                    <div class="tip">#从远程库获取代码</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git pull &lt;remote&gt; &lt;branch&gt;</div>
+                                    <div class="tip">#下载代码及快速合并</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git push &lt;remote&gt; &lt;branch&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#上传代码及快速合并</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git remote rm &lt;remote&gt;</div>
+                                    <div class="tip">#删除远程仓库</div>
+                                </div>
+                                <div>
+                                    <div class="order" style="width:100%">$ git push &lt;remote&gt;:&lt;branch/tag-name&gt;</div>
+                                    <div class="tip" style="float:left;margin-left:252px;">#删除远程标签</div>
+                                </div>
+                                <div>
+                                    <div class="order">$ git push --tags</div>
+                                    <div class="tip">#上传所有标签</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 
 	</div>

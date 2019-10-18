@@ -874,3 +874,166 @@ hr {
     padding: 0 10px
   }
 }
+
+/* git命令样式开始 */
+.gitCommand{
+	color:rgb(238,225,172);
+	background:rgb(32,47,50);
+	width:1400px;
+	height:940px;
+	margin:0 auto;
+	border: 1px solid #2222ff;
+}
+.north{
+	width:1310px;
+	height:80px;
+	margin-left:35px;
+	border: 1px solid #535353;
+}
+.git-northLeft label{
+	float:left;
+	color:rgb(238,225,172);
+	font-size:30px;
+	font-weight:bold;
+	margin-top:22px;
+	border: 1px solid #535353;
+}
+.northRigth{
+	float:right;
+	margin-right:12px;
+	width:360px;
+	font-size:14px;
+	margin-top:25px;
+	border: 2px solid #7DAC75;
+	border-radius:4px;
+}
+.nr{
+	float:left;
+	width:47%;
+	margin-left:10px;
+}
+.nrName{
+	float:left;
+	width:30%;
+	color:#649292;
+	font-weight:bold;
+}
+.nrTip{
+	float:left;
+	width:70%;
+	color:#7DAC75;
+	font-weight:bold;
+}
+.line{
+	width:1300px;
+	height:8px;
+	margin-left:35px;
+}
+.git-center{
+	margin-top:-8px;
+}
+
+.center-vertical {
+	float:left;
+	margin-left:25px;
+	width:30%;
+	border: 1px solid #535353;
+}
+
+.categary{
+	float:left;
+	width:100%;
+	margin-top:15px;
+	min-height:30px;
+	font-family:verdana;
+	border: 1px solid #111111;
+}
+.git-title{
+	background:rgb(175,63,103);
+	float:left;
+	width:97%;
+	font-size:14px;
+	font-weight:bold;
+	
+	color:#ffffff;
+	margin-left:12px;
+	height:20px;
+	border: 1px solid #333355;
+	border-radius:3px;
+	
+}
+.git-title div{
+	margin-left:12px;
+	line-height:20px;
+}
+.orders{
+	margin-top:25px;
+	width:100%;
+	border: 1px solid #333355;
+}
+.order{
+	float:left;
+	margin-left:25px;
+	width:52%;
+	height:20px;
+	font-size:14px;
+	font-weight:bold;
+	color:#649292;
+	border: 1px solid #333355;
+}
+
+.order-line2{ 
+	float:left;
+	margin-left:25px;
+	width:52%;
+	font-size:14px;
+	font-weight:bold;
+	color:#649292;
+	height:34px;
+	line-height:16px;
+}
+.order-line3{ 
+	float:left;
+	margin-left:25px;
+	width:52%;
+	font-size:14px;
+	font-weight:bold;
+	color:#649292;
+	height:45px;
+	line-height:16px;
+}
+.tip{
+	float:right;
+	margin-right:10px;
+	width:38%;
+	height:20px;
+	font-size:13px;
+	line-height:20px;
+	vertical-align: middle;
+	font-weight:bold;
+	color:#7DAC75;
+	border: 1px solid #333355;
+}
+.tip-line2{ 
+	float:right;
+	margin-right:10px;
+	width:38%;
+	font-size:13px;
+	vertical-align: middle;
+	font-weight:bold;
+	color:#7DAC75;
+	height:34px;
+	line-height:14px;
+}
+.tip-line3{ 
+	float:right;
+	margin-right:10px;
+	width:38%;
+	font-size:13px;
+	vertical-align: middle;
+	font-weight:bold;
+	color:#7DAC75;
+	height:45px;
+	line-height:14px;
+}
+/* git命令样式结束 */
